@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { Link } from "react-router-dom";
 import ExperienceMap from "../components/ExperienceMap";
+import Projects from "../components/Projects";
 
 export default function HomePage() {
   const profileImageUrl = `${import.meta.env.BASE_URL}headshot.jpg`;
@@ -83,41 +83,49 @@ export default function HomePage() {
               <h2 className="text-3xl font-semibold text-white">About</h2>
 
               <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
-                I'm a junior at the University of North Carolina at Chapel Hill
-                majoring in Statistics and Computer Science. As an aspiring data
-                scientist, I am incredibly passionate about using data to solve
-                complex problems and drive informed decision-making. I have
-                experience with many data science tools and techniques, and I am
-                always looking to learn more. Please connect with me if you want
-                to chat about data science, analytics, or anything else!
+                I'm a senior at the University of North Carolina at Chapel Hill
+                majoring in Statistics and Computer Science. I have a profound
+                interest in data analytics, science, and engineering, and aspire
+                to build a career at the intersection of these fields. I have
+                experience with many data tools and techniques, and I am always
+                looking to learn more. Please connect with me if you want to chat
+                about data science, analytics, or anything else!
               </p>
 
               <div className="mt-8 grid gap-4 md:grid-cols-3">
-                <Link
-                  to="/about/hobbies"
-                  className="cursor-pointer rounded-2xl border border-slate-700 bg-slate-900 p-5 transition hover:-translate-y-1 hover:border-blue-300 hover:bg-slate-800"
-                >
-                  <h3 className="text-xl font-semibold text-white">
-                    Hobbies & Interests
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    Click to learn more about what I enjoy outside of school and work.
-                  </p>
-                </Link>
+                <div className="rounded-2xl border border-slate-700 bg-slate-900 p-5">
+                  <h3 className="text-xl font-semibold text-white">Skills</h3>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {["Python", "SQL", "R", "Java", "JavaScript", "Pandas", "Scikit-learn", "Power BI", "Tableau", "Docker"].map((s) => (
+                      <span
+                        key={s}
+                        className="rounded-md bg-blue-500/10 px-2.5 py-1 text-xs font-medium text-blue-300"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
 
-                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-                  <h3 className="text-xl font-semibold text-white">Sports</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    A future interactive page for hockey and soccer.
+                <div className="rounded-2xl border border-slate-700 bg-slate-900 p-5">
+                  <h3 className="text-xl font-semibold text-white">Education</h3>
+                  <p className="mt-2 text-sm font-medium text-slate-200">
+                    UNC Chapel Hill
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-slate-400">
+                    B.S. Statistics & Computer Science, Minor in History · GPA
+                    3.71 · Class of 2027
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-                  <h3 className="text-xl font-semibold text-white">
-                    Life Outside Work
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-400">
-                    A future page for friends, experiences, and personal moments.
+                <div className="rounded-2xl border border-slate-700 bg-slate-900 p-5">
+                  <h3 className="text-xl font-semibold text-white">Leadership</h3>
+                  <p className="mt-2 text-sm font-medium text-slate-200">
+                    President, UNC Ice Hockey
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-slate-400">
+                    Managed operations for 30+ athletes and secured $300K+ in
+                    funding through partnerships.
                   </p>
                 </div>
               </div>
@@ -129,15 +137,18 @@ export default function HomePage() {
                 Places across the US where my journey has taken me.
               </p>
               <div className="mt-6">
-                <ExperienceMap/>
+                <ExperienceMap />
               </div>
             </div>
 
             <div id="projects">
               <h2 className="text-3xl font-semibold text-white">Projects</h2>
-              <p className="mt-4 text-slate-400">
-                Add technical and data-focused projects here.
+              <p className="mt-2 text-sm text-slate-500">
+                A few things I've built across data science, ML, and software.
               </p>
+              <div className="mt-6">
+                <Projects/>
+              </div>
             </div>
           </section>
         </div>
