@@ -2,6 +2,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import ExperienceMap from "../components/ExperienceMap";
 import Projects from "../components/Projects";
+import YankeeOfTheDay from "../components/YankeeOfTheDay";
 
 export default function HomePage() {
   const profileImageUrl = `${import.meta.env.BASE_URL}headshot.jpg`;
@@ -75,6 +76,7 @@ export default function HomePage() {
               <p className="mt-10 text-xl text-slate-300">
                 Pleasantville, NY | Chapel Hill, NC
               </p>
+              <YankeeOfTheDay />
             </div>
           </aside>
 
